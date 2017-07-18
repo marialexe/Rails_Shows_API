@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  # Scoping => wrapping around the route => make it possible to have as path localhost:3000/api/shows
+  #Not having scoping => path localhost:3000/api/shows
+  scope path: 'api' do
+    resources :shows
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
